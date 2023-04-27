@@ -10,4 +10,9 @@ export class ItemService {
             }})
         return res.data;
     }
+
+    static async getById(id) {
+        let res = await axios.get(`${url}/item/${id}`)
+        return res.data
+    }
 }

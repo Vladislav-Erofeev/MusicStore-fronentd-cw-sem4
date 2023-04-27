@@ -6,7 +6,7 @@ import NavBar from "../components/UI/NavBar";
 import Footer from "../components/UI/Footer";
 import styles from "../styles/items.module.css"
 
-const ItemsPage = () => {
+const ItemListPage = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [items, setItems] = useState([])
 
@@ -14,7 +14,6 @@ const ItemsPage = () => {
         setIsLoading(true)
         const fetch = async () => {
             let data = await ItemService.getItems()
-            console.log(data)
             setItems(data)
             setIsLoading(false)
         }
@@ -24,10 +23,14 @@ const ItemsPage = () => {
         <div>
             <NavBar />
             <h1 className={styles.title}>Каталог</h1>
-            <ItemList items={items} />
+            {isLoading
+            ? <h1>Loading...</h1>
+            : <ItemList items={items} />
+            }
+
             <Footer />
         </div>
     );
 };
 
-export default ItemsPage;
+export default ItemListPage;

@@ -6,7 +6,7 @@ const ItemList = ({items}) => {
     return (
         <div className={styles.item_list}>
             {items.map(item =>
-                <Item item={item} />
+                <Item item={item} key={item.id} />
             )}
         </div>
     );

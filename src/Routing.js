@@ -1,15 +1,16 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
-import ItemsPage from "./pages/ItemsPage";
+import ItemListPage from "./pages/ItemListPage";
+import ItemPage from "./pages/ItemPage";
 
 const Routing = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path={"/"} element={<IndexPage />} />
-                <Route path={"/items"} element={<ItemsPage />} />
-                <Route path={"/item/{:id}"} />
+                <Route path={"/items"} element={<ItemListPage />} />
+                <Route path={"/item/:id"} element={<ItemPage />} />
             </Routes>
         </BrowserRouter>
     );

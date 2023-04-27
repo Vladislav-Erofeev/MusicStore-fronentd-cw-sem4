@@ -26,16 +26,16 @@ const NavBar = () => {
                     <label for="toggle" className={styles.menu_btn} onClick={changeState}>
                         <span />
                     </label>
-                    <img src="images/logo.png" width={40} height={40}/>
+                    <img src="/images/logo.png" width={40} height={40}/>
                     <h1 className={styles.name}>GuitarStore</h1>
                 </div>
 
                 <p>здесь найдётся всё</p>
 
                 <div>
-                    <img src="images/search.png" width={30} height={30}/>
-                    <img src="images/bin.png" width={30} height={30}/>
-                    <img src="images/profile.png" width={30} height={30}/>
+                    <img src="/images/search.png" width={30} height={30}/>
+                    <img src="/images/bin.png" width={30} height={30}/>
+                    <img src="/images/profile.png" width={30} height={30}/>
                 </div>
             </nav>
 
