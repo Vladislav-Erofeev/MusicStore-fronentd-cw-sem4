@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    margin-top: 15px;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 2;
+}
+
+nav div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+nav p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14pt;
+
+    color: #6D6D6D;
+}
+
+nav .name {
+    color: #1D87DC;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20pt;
+
+}
+
+.menu_toggle {
+    display: none;
+}
+.menu_btn {
+    width: 32px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu_btn span{
+    width: 35px;
+    height: 5px;
+    background-color: #1D87DC;
+    position: relative;
+    transition: 0.3s;
+}
+
+.menu_btn span::before,
+.menu_btn span::after{
+    display: block;
+    content: "";
+    width: 35px;
+    height: 5px;
+    background-color: #1D87DC;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.menu_btn span::after {
+    top: 15px;
+}
+
+.menu_btn span::before {
+    top: -15px;
+}
+
+.menu_toggle:checked ~ .menu_btn span {
+    transform: rotate(45deg);
+}
+
+.menu_toggle:checked ~ .menu_btn span::before {
+    top: 0;
+    transform: rotate(-90deg);
+}
+
+.menu_toggle:checked ~ .menu_btn span::after {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 550px){
+    nav p {
+        display: none;
+    }
+
+    nav .name {
+        font-size: 18pt;
+    }
+}
+
+.links_opened, .links_closed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20pt;
+
+    color: #1D87DC;
+    transition: 0.5s;
+    position: absolute;
+    top: 6%;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+.links_closed {
+    visibility: hidden;
+    opacity: 0;
+    top: -100%;
+}
