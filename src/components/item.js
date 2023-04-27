@@ -6,7 +6,9 @@ import {Link} from "react-router-dom";
 const Item = ({item}) => {
     return (
         <div  className={styles.item}>
-            <img src={`${url}/image${item.images[0].url}`} width={100}/>
+            <div className={styles.image}>
+                <img src={`${url}/image${item.images[0].url}`} width={100}/>
+            </div>
             <div className={styles.text}>
                 <div>
                     <p className={styles.category}>{categories[item.category]}</p>

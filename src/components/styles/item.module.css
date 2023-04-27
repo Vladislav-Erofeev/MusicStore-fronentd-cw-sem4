@@ -10,10 +10,28 @@
     padding: 15px;
 }
 
+@media screen and (min-width: 1100px) {
+    .item {
+        flex-direction: column;
+        max-width: 250px;
+        min-width: 200px;
+        align-items: center;
+    }
+}
+
 .item .category {
     font-family: 'Roboto';
     font-size: 16pt;
     color: #4F4F4F;
+}
+
+.item .image {
+    width: 100px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 
@@ -43,7 +61,7 @@
 }
 
 .item .btn {
-    width: 100%;
+    width: 95%;
     text-align: center;
     background-color: #1D87DC;
     padding: 5px;

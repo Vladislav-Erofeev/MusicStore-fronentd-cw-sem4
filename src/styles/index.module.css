@@ -14,7 +14,7 @@
 
 @media screen and (min-width: 900px) {
     .mainImage {
-        width: 60%;
+        width: 55%;
     }
 }
 
@@ -50,6 +50,15 @@
     font-family: 'Roboto';
     font-size: 23pt;
     color: #515151;
+}
+
+.category .image {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .category:hover {
