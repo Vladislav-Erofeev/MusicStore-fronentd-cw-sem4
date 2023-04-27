@@ -1,0 +1,104 @@
+.footer {
+    margin-top: 15px;
+    width: 100%;
+    background: #09457B;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+}
+
+.footer h1 {
+    text-align: center;
+    font-family: 'Jost';
+    font-size: 18pt;
+    color: white;
+}
+
+.footer p {
+    font-family: 'Jost';
+    font-size: 14pt;
+    color: #CCCCCC;
+}
+
+.navigation {
+    width: 40%;
+    margin: auto;
+}
+
+.social {
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 50%;
+    align-items: center;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.logo .name {
+    color: #1D87DC;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20pt;
+    margin-top: 0;
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.cont_info {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media screen and (max-width: 900px){
+    .footer {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo .name {
+        font-size: 18pt;
+    }
+
+    .nav    {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .socials {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .logo {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .copyright {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .contacts {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .cont_info {
+        width: 100%;
+    }
+}

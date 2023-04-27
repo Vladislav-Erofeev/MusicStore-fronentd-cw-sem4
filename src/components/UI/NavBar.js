@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import styles from "./styles/general.module.css";
+import styles from "./styles/navbar.module.css";
+import {Link, NavLink} from "react-router-dom";
 
 const NavBar = () => {
     const [isOpened, setIsOpened] = useState(false)
@@ -17,7 +18,7 @@ const NavBar = () => {
     }
 
     return (
-        <div>
+        <div className={styles.navigation}>
             <nav>
                 <div>
                     <input type="checkbox" className={styles.menu_toggle}  id="toggle">
@@ -39,10 +40,10 @@ const NavBar = () => {
             </nav>
 
             <div className={linksStyle}>
-                <p>главная</p>
-                <p>каталог</p>
-                <p>корзина</p>
-                <p>профиль</p>
+                <Link to={"/"} className={styles.nav_links} ><p>главная</p></Link>
+                <Link to={"/items"} className={styles.nav_links} ><p>каталог</p></Link>
+                <Link to={"/"} className={styles.nav_links} ><p>корзина</p></Link>
+                <Link to={"/"} className={styles.nav_links} ><p>профиль</p></Link>
             </div>
         </div>
     );

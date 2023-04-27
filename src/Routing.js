@@ -1,14 +1,15 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
-import Items from "./pages/Items";
+import ItemsPage from "./pages/ItemsPage";
 
 const Routing = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path={"/"} element={<IndexPage />} />
-                <Route path={"/items"} element={<Items />} />
+                <Route path={"/items"} element={<ItemsPage />} />
+                <Route path={"/item/{:id}"} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainImage {
+    border-radius: 15px;
+    width: 95%;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    z-index: -2;
+}
+
+@media screen and (min-width: 900px) {
+    .mainImage {
+        width: 60%;
+    }
+}
+
+.index h1 {
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 15px;
+    font-size: 25pt;
+
+
+    color: #000000;
+}
+
+.category {
+    margin: auto;
+    margin-top: 15px;
+    width: 92%;
+    height: 10%;
+    padding: 1%;
+    background: #FFFFFF;
+    border: 2pt solid #1D87DC;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.category_name {
+    font-family: 'Roboto';
+    font-size: 23pt;
+    color: #515151;
+}
+
+.category:hover {
+    transform: scale(104%);
+}
+
+@media screen and (min-width: 900px) {
+    .category {
+        width: 50%;
+    }
+}
+
+.guitarists {
+    width: 95%;
+    margin:auto;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+.guitarists div {
+    background: #FFFFFF;
+    border: 2pt solid #1D87DC;
+    border-radius: 15px;
+    padding: 20px;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.guitarists p {
+    font-family: 'Roboto';
+    font-size: 15pt;
+    color: #515151;
+}
+
+@media screen and (min-width: 900px) {
+    .guitarists {
+        width: 53%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .guitarists {
+        width: 53%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+}

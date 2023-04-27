@@ -2,8 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {ItemService} from "../services/ItemService";
 import {Link} from "react-router-dom";
 import ItemList from "../components/ItemList";
+import NavBar from "../components/UI/NavBar";
+import Footer from "../components/UI/Footer";
+import styles from "../styles/items.module.css"
 
-const Items = () => {
+const ItemsPage = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [items, setItems] = useState([])
 
@@ -19,13 +22,12 @@ const Items = () => {
     }, [])
     return (
         <div>
-            {isLoading
-                ? <h1>Loading...</h1>
-                : <ItemList items={items} />
-            }
-            <Link to={"/"}>Главная</Link>
+            <NavBar />
+            <h1 className={styles.title}>Каталог</h1>
+            <ItemList items={items} />
+            <Footer />
         </div>
     );
 };
 
-export default Items;
+export default ItemsPage;
