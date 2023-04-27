@@ -8,9 +8,10 @@ const Routing = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={"/"} element={<IndexPage />} />
-                <Route path={"/items"} element={<ItemListPage />} />
-                <Route path={"/item/:id"} element={<ItemPage />} />
+                <Route path={"/"} element={<IndexPage/>}/>
+                <Route path={"/items/:category"} element={<ItemListPage/>}/>
+                <Route path={"/items/all"} element={<ItemListPage/>}/>
+                <Route path={"/item/:id"} element={<ItemPage/>}/>
             </Routes>
         </BrowserRouter>
     );

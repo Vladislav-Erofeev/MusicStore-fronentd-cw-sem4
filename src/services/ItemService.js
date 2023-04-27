@@ -3,11 +3,13 @@ import {url} from '../constants';
 
 export class ItemService {
     static async getItems(category) {
-        if (category == null)
+        if (category == undefined)
             category = ""
-        let res = await axios.get(`${url}/item/all`, {params: {
+        let res = await axios.get(`${url}/item/all`, {
+            params: {
                 category: category.toUpperCase()
-            }})
+            }
+        })
         return res.data;
     }
 

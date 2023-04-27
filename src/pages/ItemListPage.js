@@ -1,34 +1,41 @@
 import React, {useEffect, useState} from 'react';
 import {ItemService} from "../services/ItemService";
-import {Link} from "react-router-dom";
 import ItemList from "../components/ItemList";
 import NavBar from "../components/UI/NavBar";
 import Footer from "../components/UI/Footer";
 import styles from "../styles/items.module.css"
+import {useParams} from "react-router-dom";
+import {categories} from "../constants";
 
 const ItemListPage = () => {
+    const {category} = useParams()
     const [isLoading, setIsLoading] = useState(false)
     const [items, setItems] = useState([])
 
     useEffect(() => {
         setIsLoading(true)
         const fetch = async () => {
-            let data = await ItemService.getItems()
+            let data = await ItemService.getItems(category)
             setItems(data)
             setIsLoading(false)
         }
         fetch()
     }, [])
+
     return (
         <div>
-            <NavBar />
-            <h1 className={styles.title}>Каталог</h1>
-            {isLoading
-            ? <h1>Loading...</h1>
-            : <ItemList items={items} />
+            <NavBar/>
+            {category == undefined
+                ?<h1 className={styles.title}>Каталог</h1>
+                : <h1 className={styles.title}>{categories[category.toUpperCase()]}</h1>
             }
 
-            <Footer />
+            {isLoading
+                ? <h1>Loading...</h1>
+                : <ItemList items={items}/>
+            }
+
+            <Footer/>
         </div>
     );
 };

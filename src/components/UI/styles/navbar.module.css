@@ -60,6 +60,7 @@ nav .name {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
 
 .menu_btn span{

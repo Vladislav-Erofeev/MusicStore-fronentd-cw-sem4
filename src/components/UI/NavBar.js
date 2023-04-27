@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from "./styles/navbar.module.css";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
     const [isOpened, setIsOpened] = useState(false)
@@ -10,8 +10,7 @@ const NavBar = () => {
         if (isOpened) {
             setLinksStyle(styles.links_closed)
             setIsOpened(false)
-        }
-        else {
+        } else {
             setLinksStyle(styles.links_opened)
             setIsOpened(true)
         }
@@ -21,13 +20,13 @@ const NavBar = () => {
         <div className={styles.navigation}>
             <nav>
                 <div>
-                    <input type="checkbox" className={styles.menu_toggle}  id="toggle">
+                    <input type="checkbox" className={styles.menu_toggle} id="toggle">
                     </input>
                     <label for="toggle" className={styles.menu_btn} onClick={changeState}>
-                        <span />
+                        <span/>
                     </label>
                     <img src="/images/logo.png" width={40} height={40}/>
-                    <h1 className={styles.name}>GuitarStore</h1>
+                    <Link to={"/"} style={{textDecoration: "none"}}><h1 className={styles.name}>GuitarStore</h1></Link>
                 </div>
 
                 <p>здесь найдётся всё</p>
@@ -40,10 +39,10 @@ const NavBar = () => {
             </nav>
 
             <div className={linksStyle}>
-                <Link to={"/"} className={styles.nav_links} ><p>главная</p></Link>
-                <Link to={"/items"} className={styles.nav_links} ><p>каталог</p></Link>
-                <Link to={"/"} className={styles.nav_links} ><p>корзина</p></Link>
-                <Link to={"/"} className={styles.nav_links} ><p>профиль</p></Link>
+                <Link to={"/"} className={styles.nav_links}><p>главная</p></Link>
+                <Link to={"/items/all"} className={styles.nav_links}><p>каталог</p></Link>
+                <Link to={"/"} className={styles.nav_links}><p>корзина</p></Link>
+                <Link to={"/"} className={styles.nav_links}><p>профиль</p></Link>
             </div>
         </div>
     );

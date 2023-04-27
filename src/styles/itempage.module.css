@@ -87,7 +87,7 @@
     display: grid;
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1000px) {
     .item {
         width: 55%;
     }

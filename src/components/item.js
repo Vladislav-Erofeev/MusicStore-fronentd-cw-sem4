@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const Item = ({item}) => {
     return (
-        <div  className={styles.item}>
+        <div className={styles.item}>
             <div className={styles.image}>
                 <img src={`${url}/image${item.images[0].url}`} width={100}/>
             </div>
@@ -16,10 +16,10 @@ const Item = ({item}) => {
                 </div>
                 <div>
                     {item.count > 0
-                    ? <p className={styles.mini_text}>В наличии</p>
-                    : <p>Нет в наличии</p>
+                        ? <p className={styles.mini_text}>В наличии</p>
+                        : <p>Нет в наличии</p>
                     }
-                    <h1 className={styles.price}>{item.price + ' р.'}</h1>
+                    <h1 className={styles.price}>{new Intl.NumberFormat('ru').format(item.price)} р.</h1>
                 </div>
                 <Link to={"/item/" + item.id} className={styles.btn}><p>Подробнее</p></Link>
             </div>
