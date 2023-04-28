@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import NavBar from "../components/UI/NavBar";
 import styles from '../styles/index.module.css'
 import Footer from "../components/UI/Footer";
 import {Link} from "react-router-dom";
+import {AuthContext} from "../services/contextHolder";
 
 const IndexPage = () => {
     return (

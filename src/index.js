@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Routing from "./Routing";
+import {AuthContext} from "./services/contextHolder";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Routing />
+        <Routing />
   </React.StrictMode>
 );
 

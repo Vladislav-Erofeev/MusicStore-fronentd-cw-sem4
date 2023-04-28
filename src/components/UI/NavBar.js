@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from "./styles/navbar.module.css";
 import {Link} from "react-router-dom";
+import {AuthContext} from "../../services/contextHolder";
 
 const NavBar = () => {
     const [isOpened, setIsOpened] = useState(false)

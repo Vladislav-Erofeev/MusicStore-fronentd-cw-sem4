@@ -1,15 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import NavBar from "../components/UI/NavBar";
 import Footer from "../components/UI/Footer";
 import {ItemService} from "../services/ItemService";
 import {categories, nullItem, url} from "../constants";
 import styles from "../styles/itempage.module.css"
+import {AuthContext} from "../services/contextHolder";
 
 const ItemPage = () => {
     const {id} = useParams()
     const [item, setItem] = useState(nullItem)
     const [isLoading, setIsLoading] = useState(false)
+
 
     useEffect(() => {
         setIsLoading(true)

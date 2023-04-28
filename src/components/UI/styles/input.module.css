@@ -1,0 +1,22 @@
+.input,
+.textArea{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    font-family: 'Roboto';
+    border-radius: 20px;
+    border-width: 2pt;
+    border-color: #1D87DC;
+    font-size: 16pt;
+    outline: none;
+    color: #1D87DC;
+}
+
+.input::placeholder,
+.textArea::placeholder {
+    color: #1D87DC;
+}
+
+.textArea {
+    height: 200px;
+}

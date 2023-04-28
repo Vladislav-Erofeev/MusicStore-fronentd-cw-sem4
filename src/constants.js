@@ -12,7 +12,8 @@ export const nullItem = {
     title: "",
     description: "",
     body: "",
-    price: 0,
+    price: "",
+    count: "",
     category: "",
     images: [{url: ''}]
 }
