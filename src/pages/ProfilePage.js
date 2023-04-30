@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import Cookies from "js-cookies/src/cookies";
 import {ProfileService} from "../services/ProfileService";
 import {nullUser, url} from "../constants";
+import styles from "../styles/profile.module.css"
 
 const ProfilePage = () => {
     const navigate = useNavigate()
@@ -27,13 +28,30 @@ const ProfilePage = () => {
     return (
         <div>
             <NavBar />
-            <h1>Profile</h1>
-            <h1>{user.name}</h1>
-            {user.url == ""
-            ? <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCHxhbtADK2Wfkh6K1nP_2Fp89Sndhuc2j0BhSTXistw&s"
-                    width={"200px"} height={"200px"}/>
-            : <img src={`${url}/image${user.url}`} width={"200px"} height={"200px"}/>}
-            <p onClick={logout}>Выйти</p>
+            <h1 className={styles.title}>Мой кабинет</h1>
+            <div className={styles.main_block}>
+                <div className={styles.profile_image}>{user.url == ""
+                    ? <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCHxhbtADK2Wfkh6K1nP_2Fp89Sndhuc2j0BhSTXistw&s"
+                           width={"100%"}/>
+                    : <img src={`${url}/image${user.url}`} width={"100%"}/>}
+                </div>
+                <div className={styles.info_block}>
+                    <h1 className={styles.username}>{user.lastname} {user.name}</h1>
+                    <div className={styles.user_info}>
+                        <div>
+                            <p>{user.phone}</p>
+                            <p>{user.mail}</p>
+                        </div>
+                        <div>
+                            <p>г. {user.city}</p>
+                            <p onClick={logout}>Выйти</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 className={styles.orders}>Мои заказы</h1>
+            {/*TODO сделать вывод заказов*/}
             <Footer />
         </div>
     );
