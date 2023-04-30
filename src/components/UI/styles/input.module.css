@@ -4,12 +4,21 @@
     height: 40px;
     padding: 5px;
     font-family: 'Roboto';
-    border-radius: 20px;
     border-width: 2pt;
-    border-color: #1D87DC;
     font-size: 16pt;
     outline: none;
     color: #1D87DC;
+}
+
+.textArea {
+    border-radius: 10px;
+    border-color: #1D87DC;
+    border-style: solid;
+}
+
+.input {
+    border: none;
+    border-bottom: solid;
 }
 
 .input::placeholder,

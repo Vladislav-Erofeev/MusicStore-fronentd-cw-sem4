@@ -80,8 +80,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    gap: 15px;
     justify-items: center;
     align-items: center;
 }
@@ -99,16 +98,27 @@
     text-align: center;
     transition: 0.3s;
     cursor: pointer;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .guitarists div:hover {
     transform: scale(104%);
 }
 
+.guitarists img{
+    display: block;
+    height: 100%;
+    width: 100%;
+
+}
+
 .guitarists p {
     font-family: 'Roboto';
     font-size: 15pt;
     color: #515151;
+    white-space: nowrap;
 }
 
 @media screen and (min-width: 900px) {

@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import {nullItem} from "../constants";
 import {ItemService} from "../services/ItemService";
 import Modal from "../components/UI/modal";
+import Button from "../components/UI/Button";
 
 const NewItemPage = () => {
     const [item, setItem] = useState(nullItem)
@@ -71,7 +72,7 @@ const NewItemPage = () => {
                 <input type="file" required onChange={(event) => {
                     setFile(event.target.files[0])
                 }}/>
-                <p className={styles.add_btn} onClick={save}>Добавить</p>
+                <Button onCLick={() => {save()}} >Добавить</Button>
             </div>
             <Footer/>
         </div>

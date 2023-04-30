@@ -17,3 +17,21 @@ export const nullItem = {
     category: "",
     images: [{url: ''}]
 }
+
+export const nullUser = {
+    city:"",
+    lastname:"",
+    mail:"",
+    name:"",
+    phone:"",
+    url:""
+}
+
+export const registerUser = {
+    city:"",
+    lastname:"",
+    mail:"",
+    name:"",
+    phone:"",
+    password:""
+}

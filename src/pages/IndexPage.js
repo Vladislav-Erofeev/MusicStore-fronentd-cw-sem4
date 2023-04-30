@@ -41,19 +41,19 @@ const IndexPage = () => {
                 <h1>Подборки</h1>
                 <div className={styles.guitarists}>
                     <div>
-                        <img src="/images/guitarisrs/hetfield.webp" width={"100%"}/>
+                        <img src="/images/guitarisrs/hetfield.webp" />
                         <p>Джеймс Хэтфилд</p>
                     </div>
                     <div>
-                        <img src="/images/guitarisrs/darell.jpg" width={"100%"}/>
+                        <img src="/images/guitarisrs/darell.jpg" />
                         <p>Даймбег Даррелл</p>
                     </div>
                     <div>
-                        <img src="/images/guitarisrs/hammet.jpg" width={"100%"}/>
+                        <img src="/images/guitarisrs/hammet.jpg" />
                         <p>Кирк Хэмметт</p>
                     </div>
                     <div>
-                        <img src="/images/guitarisrs/mustain.jpg" width={"100%"}/>
+                        <img src="/images/guitarisrs/mustain.jpg" />
                         <p>Дейв Мастейн</p>
                     </div>
                 </div>

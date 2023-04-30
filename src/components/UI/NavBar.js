@@ -35,7 +35,7 @@ const NavBar = () => {
                 <div>
                     <img src="/images/search.png" width={30} height={30}/>
                     <img src="/images/bin.png" width={30} height={30}/>
-                    <img src="/images/profile.png" width={30} height={30}/>
+                    <Link to={"/login"}><img src="/images/profile.png" width={30} height={30}/></Link>
                 </div>
             </nav>
 
