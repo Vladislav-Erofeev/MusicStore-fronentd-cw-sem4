@@ -1,11 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styles from "./styles/navbar.module.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../../services/contextHolder";
 
 const NavBar = () => {
     const [isOpened, setIsOpened] = useState(false)
     const [linksStyle, setLinksStyle] = useState(styles.links_closed)
+    const [searchStyle, setSearchStyle] = useState(styles.closed)
+    const navigate = useNavigate()
+    const [query, setQuery] = useState("")
 
     const changeState = () => {
         if (isOpened) {
@@ -15,6 +18,19 @@ const NavBar = () => {
             setLinksStyle(styles.links_opened)
             setIsOpened(true)
         }
+    }
+
+    const openSearchBar = () => {
+        setSearchStyle(styles.searchbar)
+    }
+
+    const closeSearchBar = () => {
+        setSearchStyle(styles.closed)
+    }
+
+    const search = (e) => {
+        e.stopPropagation()
+        navigate(`/search/${query}`)
     }
 
     return (
@@ -33,7 +49,7 @@ const NavBar = () => {
                 <p>здесь найдётся всё</p>
 
                 <div>
-                    <img src="/images/search.png" width={30} height={30}/>
+                    <img onClick={openSearchBar} src="/images/search.png" width={30} height={30} style={{cursor: "pointer"}}/>
                     <Link to={"/cart"}><img src="/images/bin.png" width={30} height={30}/></Link>
                     <Link to={"/login"}><img src="/images/profile.png" width={30} height={30}/></Link>
                 </div>
@@ -44,6 +60,14 @@ const NavBar = () => {
                 <Link to={"/items/all"} className={styles.nav_links}><p>каталог</p></Link>
                 <Link to={"/cart"} className={styles.nav_links}><p>корзина</p></Link>
                 <Link to={"/login"} className={styles.nav_links}><p>профиль</p></Link>
+            </div>
+
+            <div className={searchStyle} onClick={closeSearchBar}>
+                <input onClick={e => e.stopPropagation()}
+                       type={"text"} placeholder={"поиск"}
+                value={query}
+                onChange={e => {setQuery(e.target.value)}}/>
+                <Link to={`/search/${query}`} style={{textDecoration: "none"}}><p>найти</p></Link>
             </div>
         </div>
     );

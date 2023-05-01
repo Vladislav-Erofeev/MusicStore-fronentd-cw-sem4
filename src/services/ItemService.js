@@ -54,4 +54,13 @@ export class ItemService {
 
         return res.data
     }
+
+    static async getSearchResult(query) {
+        let res = await axios.get(`${url}/item/search`, {
+            params: {
+                search: `${query}`
+            }
+        })
+        return res.data
+    }
 }

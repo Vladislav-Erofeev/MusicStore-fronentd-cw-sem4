@@ -9,6 +9,7 @@ import LoginPage from "./pages/loginPage";
 import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import CartPage from "./pages/CartPage";
+import SearchResult from "./pages/searchResult";
 
 const Routing = () => {
     const [auth, setAuth] = useState(false);
@@ -28,6 +29,7 @@ const Routing = () => {
                     <Route path={"/profile"} element={<ProfilePage/>}/>
                     <Route path={"/registration"} element={<RegistrationPage/>}/>
                     <Route path={"/cart"} element={<CartPage/>}/>
+                    <Route path={"/search/:query"} element={<SearchResult/>}/>
                 </Routes>
             </BrowserRouter>
         </AuthContext.Provider>
