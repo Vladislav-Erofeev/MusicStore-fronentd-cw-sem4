@@ -34,7 +34,7 @@ const NavBar = () => {
 
                 <div>
                     <img src="/images/search.png" width={30} height={30}/>
-                    <img src="/images/bin.png" width={30} height={30}/>
+                    <Link to={"/cart"}><img src="/images/bin.png" width={30} height={30}/></Link>
                     <Link to={"/login"}><img src="/images/profile.png" width={30} height={30}/></Link>
                 </div>
             </nav>
@@ -42,7 +42,7 @@ const NavBar = () => {
             <div className={linksStyle}>
                 <Link to={"/"} className={styles.nav_links}><p>главная</p></Link>
                 <Link to={"/items/all"} className={styles.nav_links}><p>каталог</p></Link>
-                <Link to={"/"} className={styles.nav_links}><p>корзина</p></Link>
+                <Link to={"/cart"} className={styles.nav_links}><p>корзина</p></Link>
                 <Link to={"/"} className={styles.nav_links}><p>профиль</p></Link>
             </div>
         </div>

@@ -4,8 +4,9 @@ import ItemList from "../components/ItemList";
 import NavBar from "../components/UI/NavBar";
 import Footer from "../components/UI/Footer";
 import styles from "../styles/items.module.css"
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {categories} from "../constants";
+import Cookies from "js-cookies/src/cookies";
 
 const ItemListPage = () => {
     const {category} = useParams()

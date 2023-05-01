@@ -8,6 +8,7 @@ import {AuthContext} from "./services/contextHolder";
 import LoginPage from "./pages/loginPage";
 import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
+import CartPage from "./pages/CartPage";
 
 const Routing = () => {
     const [auth, setAuth] = useState(false);
@@ -15,19 +16,20 @@ const Routing = () => {
         <AuthContext.Provider value={{
             auth,
             setAuth
-        }} >
-        <BrowserRouter>
-            <Routes>
-                <Route path={"/"} element={<IndexPage/>}/>
-                <Route path={"/items/:category"} element={<ItemListPage/>}/>
-                <Route path={"/items/all"} element={<ItemListPage/>}/>
-                <Route path={"/item/:id"} element={<ItemPage/>}/>
-                <Route path={"/admin/add"} element={<NewItemPage/>} />
-                <Route path={"/login"} element={<LoginPage />} />
-                <Route path={"/profile"} element={<ProfilePage />} />
-                <Route path={"/registration"} element={<RegistrationPage />}/>
-            </Routes>
-        </BrowserRouter>
+        }}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path={"/"} element={<IndexPage/>}/>
+                    <Route path={"/items/:category"} element={<ItemListPage/>}/>
+                    <Route path={"/items/all"} element={<ItemListPage/>}/>
+                    <Route path={"/item/:id"} element={<ItemPage/>}/>
+                    <Route path={"/admin/add"} element={<NewItemPage/>}/>
+                    <Route path={"/login"} element={<LoginPage/>}/>
+                    <Route path={"/profile"} element={<ProfilePage/>}/>
+                    <Route path={"/registration"} element={<RegistrationPage/>}/>
+                    <Route path={"/cart"} element={<CartPage/>}/>
+                </Routes>
+            </BrowserRouter>
         </AuthContext.Provider>
     );
 };

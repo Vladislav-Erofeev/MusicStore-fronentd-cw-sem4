@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from "./item";
 import styles from "./styles/itemList.module.css"
+import Cookies from "js-cookies/src/cookies";
 
 const ItemList = ({items}) => {
     return (

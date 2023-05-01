@@ -27,4 +27,13 @@ export class ProfileService {
         let res = await axios.post(`${url}/register`, formData)
         return res.data
     }
+
+    static async getCart(token) {
+        let res = await axios.get(`${url}/cart`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        return res.data
+    }
 }

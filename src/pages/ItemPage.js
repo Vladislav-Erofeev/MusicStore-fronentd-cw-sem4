@@ -1,16 +1,20 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import NavBar from "../components/UI/NavBar";
 import Footer from "../components/UI/Footer";
 import {ItemService} from "../services/ItemService";
 import {categories, nullItem, url} from "../constants";
 import styles from "../styles/itempage.module.css"
 import {AuthContext} from "../services/contextHolder";
+import Cookies from "js-cookies/src/cookies";
 
 const ItemPage = () => {
     const {id} = useParams()
     const [item, setItem] = useState(nullItem)
     const [isLoading, setIsLoading] = useState(false)
+    const [isInCart, setIsInCart] = useState(false)
+    const navigation = useNavigate()
+    const token = Cookies.getItem('token')
 
 
     useEffect(() => {
@@ -19,9 +23,30 @@ const ItemPage = () => {
             let data = await ItemService.getById(id)
             setItem(data)
             setIsLoading(false)
+            let res = await ItemService.isItemInCart(data.id, token)
+            console.log(res)
+            setIsInCart(res)
         }
         fetch()
     }, [])
+
+    const add = async (id) => {
+        try {
+            await ItemService.addItemToCart(id, token)
+            setIsInCart(true)
+        } catch (e) {
+            navigation("/login")
+        }
+    }
+
+    const remove = async (id) => {
+        try {
+            await ItemService.removeItemFromCart(id, token)
+            setIsInCart(false)
+        } catch (e) {
+            navigation("/login")
+        }
+    }
     return (
         <div>
             <NavBar/>
@@ -46,7 +71,13 @@ const ItemPage = () => {
                             </div>
                             <div className={styles.block3}>
                                 <h1>{new Intl.NumberFormat('ru').format(item.price)} р.</h1>
-                                <p className={styles.bin_btn}>В корзину</p>
+                                {isInCart
+                                    ?<p className={styles.bin_btn} onClick={() => {remove(item.id)}} style={{
+                                        backgroundColor: "#09447a"
+                                    }}>Убрать из корзины</p>
+                                    :<p className={styles.bin_btn} onClick={() => {add(item.id)}}>В корзину</p>
+                                }
+
                             </div>
                         </div>
                     </div>

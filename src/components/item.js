@@ -4,6 +4,7 @@ import styles from "./styles/item.module.css"
 import {Link} from "react-router-dom";
 
 const Item = ({item}) => {
+
     return (
         <div className={styles.item}>
             <div className={styles.image}>

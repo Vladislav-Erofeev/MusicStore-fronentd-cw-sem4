@@ -28,4 +28,30 @@ export class ItemService {
         formData.append("file", file)
         await axios.post(`${url}/item/load_image/${id}`, formData)
     }
+
+    static async addItemToCart(itemId, token) {
+        await axios.post(`${url}/cart/add/${itemId}`, {},{
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    }
+
+    static async removeItemFromCart(itemId, token) {
+        await axios.delete(`${url}/cart/delete/${itemId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    }
+
+    static async isItemInCart(itemId, token) {
+        let res = await axios.get(`${url}/cart/in_cart/${itemId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+
+        return res.data
+    }
 }

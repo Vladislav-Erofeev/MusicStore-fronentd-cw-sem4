@@ -27,12 +27,13 @@ const ProfilePage = () => {
 
     return (
         <div>
-            <NavBar />
+            <NavBar/>
             <h1 className={styles.title}>Мой кабинет</h1>
             <div className={styles.main_block}>
                 <div className={styles.profile_image}>{user.url == ""
-                    ? <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCHxhbtADK2Wfkh6K1nP_2Fp89Sndhuc2j0BhSTXistw&s"
-                           width={"100%"}/>
+                    ? <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCHxhbtADK2Wfkh6K1nP_2Fp89Sndhuc2j0BhSTXistw&s"
+                        width={"100%"}/>
                     : <img src={`${url}/image${user.url}`} width={"100%"}/>}
                 </div>
                 <div className={styles.info_block}>
@@ -52,7 +53,7 @@ const ProfilePage = () => {
 
             <h1 className={styles.orders}>Мои заказы</h1>
             {/*TODO сделать вывод заказов*/}
-            <Footer />
+            <Footer/>
         </div>
     );
 };
