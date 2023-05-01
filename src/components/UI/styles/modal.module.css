@@ -1,0 +1,55 @@
+.back_opened,
+.back_close{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.52);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back_close {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.window {
+    background-color: white;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.window h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25pt;
+    color: #1D87DC;
+}
+
+.window p {
+    font-family: "Roboto";
+    font-size: 15pt;
+}
+
+.window .btn {
+    background-color: #1D87DC;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.window .btn:hover {
+    background-color: #4b9ee7;
+}

@@ -1,0 +1,11 @@
+.title {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 30pt;
+    color: #1D87DC;
+}
+
+.back {
+    min-height: 72vh;
+}

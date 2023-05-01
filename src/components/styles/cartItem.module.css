@@ -1,0 +1,70 @@
+.item {
+    display: flex;
+    border: none;
+    border-bottom: 2pt solid #1D87DC;
+    min-height: 200px;
+    width: 90%;
+    margin: auto;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.item .category {
+    font-family: 'Roboto';
+    font-size: 16pt;
+    color: #4F4F4F;
+}
+
+.item .image {
+    width: 100px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.item .text {
+    height: 200px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 0.5;
+}
+
+.item .title {
+    font-family: 'Roboto';
+    font-size: 23pt;
+}
+
+.item .mini_text {
+    font-family: 'Roboto';
+    font-size: 13pt;
+    color: #8DCBF3;
+}
+
+.item .price {
+    font-family: 'Roboto';
+    font-size: 20pt;
+}
+
+.item .btn {
+    width: 95%;
+    text-align: center;
+    background-color: #1D87DC;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+.item .btn:hover {
+    background-color: #4b9ee7;
+}
+
+

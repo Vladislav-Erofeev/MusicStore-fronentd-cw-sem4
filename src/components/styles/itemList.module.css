@@ -1,0 +1,15 @@
+.item_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+    .item_list {
+        flex-direction: row;
+        width: 60%;
+        flex-wrap: wrap;
+        margin: auto;
+        gap: 15px;
+    }
+}

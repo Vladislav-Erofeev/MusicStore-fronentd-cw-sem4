@@ -1,0 +1,32 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 70%;
+    margin: auto;
+}
+
+.back {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back h1 {
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 15px;
+    font-size: 25pt;
+    color: #1D87DC;
+}
+
+@media screen and (min-width: 900px){
+    .form {
+        width: 40%;
+    }
+
+}

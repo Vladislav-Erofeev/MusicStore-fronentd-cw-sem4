@@ -1,0 +1,34 @@
+.form {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 900px){
+    .form {
+        width: 45%;
+    }
+}
+
+.title {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Roboto';
+    color: #1D87DC;
+}
+
+.option {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    font-family: 'Roboto';
+    border-radius: 20px;
+    border-width: 2pt;
+    border-color: #1D87DC;
+    font-size: 16pt;
+    outline: none;
+    color: #1D87DC;
+}
