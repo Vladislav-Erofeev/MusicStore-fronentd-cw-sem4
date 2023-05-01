@@ -26,16 +26,17 @@ const ItemListPage = () => {
     return (
         <div>
             <NavBar/>
-            {category == undefined
-                ?<h1 className={styles.title}>Каталог</h1>
-                : <h1 className={styles.title}>{categories[category.toUpperCase()]}</h1>
-            }
+            <div  className={styles.back}>
+                {category == undefined
+                    ?<h1 className={styles.title}>Каталог</h1>
+                    : <h1 className={styles.title}>{categories[category.toUpperCase()]}</h1>
+                }
 
-            {isLoading
-                ? <h1>Loading...</h1>
-                : <ItemList items={items}/>
-            }
-
+                {isLoading
+                    ? <h1>Loading...</h1>
+                    : <ItemList items={items}/>
+                }
+            </div>
             <Footer/>
         </div>
     );

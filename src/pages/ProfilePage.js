@@ -51,15 +51,14 @@ const ProfilePage = () => {
                             </div>
                             <div>
                                 <p>г. {user.city}</p>
-                                <p onClick={logout}>Выйти</p>
+                                <p className={styles.logout_btn} onClick={logout}>Выйти</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <h1 className={styles.orders}>Мои заказы</h1>
-                <OrderList orders={orders} />
-                {/*TODO сделать вывод заказов*/}
+                <OrderList orders={orders}/>
             </div>
             <Footer/>
         </div>

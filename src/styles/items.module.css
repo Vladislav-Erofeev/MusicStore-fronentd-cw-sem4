@@ -5,3 +5,7 @@
     font-size: 30pt;
     color: #1D87DC;
 }
+
+.back {
+    min-height: 72vh;
+}

@@ -75,3 +75,8 @@
 .back {
     min-height: 72vh;
 }
+
+.logout_btn {
+    color: #09447a;
+    cursor: pointer;
+}
