@@ -1,0 +1,37 @@
+.item {
+    border: #1D87DC solid 2pt;
+    border-radius: 15px;
+    width: 85%;
+    margin: auto;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+@media screen and (min-width: 900px){
+    .item {
+        width: 45%;
+    }
+
+}
+
+.item p {
+    font-family: Roboto;
+    font-size: 14pt;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.item h1 {
+    font-family: Roboto;
+    font-size: 20pt;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.status {
+    color: #4b9ee7;
+}
+
+.done {
+    color: #2fb94d;
+}

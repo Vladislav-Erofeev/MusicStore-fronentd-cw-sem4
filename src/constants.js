@@ -7,6 +7,13 @@ export const categories = {
     EQUIPMENT: "Оборудование"
 }
 
+export const orderStatus = {
+    CREATED: "создан",
+    ASSEMBLED: "в пути",
+    DELIVERED: "готов к выдаче",
+    RECEIVED: "получен"
+}
+
 export const nullItem = {
     id: 0,
     title: "",

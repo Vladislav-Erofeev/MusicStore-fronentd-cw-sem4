@@ -6,11 +6,14 @@ import Cookies from "js-cookies/src/cookies";
 import {ProfileService} from "../services/ProfileService";
 import {nullUser, url} from "../constants";
 import styles from "../styles/profile.module.css"
+import {OrderService} from "../services/OrderService";
+import OrderList from "../components/orderList";
 
 const ProfilePage = () => {
     const navigate = useNavigate()
     const [user, setUser] = useState(nullUser)
     const token = Cookies.getItem('token')
+    const [orders, setOrders] = useState([])
     const logout = () => {
         Cookies.removeItem('token')
         navigate("/")
@@ -20,6 +23,8 @@ const ProfilePage = () => {
         const fetch = async () => {
             let res = await ProfileService.getProfile(token)
             setUser(res)
+            res = await OrderService.getOrders(token)
+            setOrders(res)
         }
 
         fetch()
@@ -53,6 +58,7 @@ const ProfilePage = () => {
                 </div>
 
                 <h1 className={styles.orders}>Мои заказы</h1>
+                <OrderList orders={orders} />
                 {/*TODO сделать вывод заказов*/}
             </div>
             <Footer/>
