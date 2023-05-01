@@ -60,6 +60,7 @@
     text-decoration: none;
     font-family: 'Roboto';
     font-size: 14pt;
+    cursor: pointer;
 }
 
 .item .btn:hover {

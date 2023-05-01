@@ -33,6 +33,8 @@
 .order_info {
     margin: auto;
     width: 90%;
+    border-bottom: #1D87DC solid;
+    padding: 10px;
 }
 
 @media screen and (min-width: 900px) {
@@ -51,4 +53,37 @@
     font-family: Roboto;
     font-weight: 400;
     font-size: 20pt;
+}
+
+.create_btn {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    font-family: Roboto;
+    font-size: 14pt;
+    background-color: #1D87DC;
+    color: white;
+    cursor: pointer;
+}
+
+.creation {
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+}
+
+@media screen and (min-width: 900px) {
+    .create_btn {
+        width: 45%;
+    }
+
+    .creation {
+        width: 45%;
+    }
+}
+
+.create_btn:hover {
+    background-color: #4b9ee7;
 }

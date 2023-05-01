@@ -63,8 +63,8 @@ const ItemPage = () => {
                                 <p>Гарантия: 1 год</p>
                             </div>
                             <div className={styles.block2}>
-                                {item.count == 0
-                                    ? <p>Нет в наличии</p>
+                                {item.count < 2
+                                    ? <p style={{color: "#09447a"}}>Нет в наличии</p>
                                     : <p>В наличии</p>
                                 }
                                 <p>{item.description}</p>

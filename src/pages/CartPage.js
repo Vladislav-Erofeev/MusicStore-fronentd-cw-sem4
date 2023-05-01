@@ -6,12 +6,15 @@ import {useNavigate} from "react-router-dom";
 import {ProfileService} from "../services/ProfileService";
 import styles from "../styles/cart.module.css"
 import CartList from "../components/cartList";
+import Input from "../components/UI/Input";
+import {OrderService} from "../services/OrderService";
 
 const CartPage = () => {
     const navigation = useNavigate()
     const token = Cookies.getItem('token')
     const [cart, setCart] = useState([])
     const [sum, setSum] = useState(0)
+    const [address, setAddress] = useState("")
 
     useEffect(() => {
         const fetch = async () => {
@@ -40,6 +43,13 @@ const CartPage = () => {
         console.log(cart)
     }
 
+    const createOrder = async () => {
+        await OrderService.createOrder(address, token)
+        setCart([])
+        setSum(0)
+        setAddress("")
+    }
+
     return (
         <div>
             <NavBar/>
@@ -62,6 +72,19 @@ const CartPage = () => {
                         </div>
                     </div>
                 </div>
+                {cart.length == 0
+                    ? <></>
+                    : <div className={styles.creation}>
+                        <Input placeholder={"адрес"}
+                               value={address}
+                               onChange={e => {
+                                   setAddress(e.target.value)
+                               }}></Input>
+                        <p className={styles.create_btn}
+                           onClick={createOrder}>Оформить заказ</p>
+                    </div>
+                }
+
             </div>
             <Footer/>
         </div>

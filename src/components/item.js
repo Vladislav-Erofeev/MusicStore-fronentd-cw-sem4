@@ -16,9 +16,9 @@ const Item = ({item}) => {
                     <h1 className={styles.title}>{item.title}</h1>
                 </div>
                 <div>
-                    {item.count > 0
+                    {item.count > 1
                         ? <p className={styles.mini_text}>В наличии</p>
-                        : <p>Нет в наличии</p>
+                        : <p className={styles.mini_text} style={{color: "#09447a"}}> Нет в наличии</p>
                     }
                     <h1 className={styles.price}>{new Intl.NumberFormat('ru').format(item.price)} р.</h1>
                 </div>
