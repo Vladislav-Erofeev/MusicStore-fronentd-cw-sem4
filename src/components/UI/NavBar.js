@@ -43,7 +43,7 @@ const NavBar = () => {
                 <Link to={"/"} className={styles.nav_links}><p>главная</p></Link>
                 <Link to={"/items/all"} className={styles.nav_links}><p>каталог</p></Link>
                 <Link to={"/cart"} className={styles.nav_links}><p>корзина</p></Link>
-                <Link to={"/"} className={styles.nav_links}><p>профиль</p></Link>
+                <Link to={"/login"} className={styles.nav_links}><p>профиль</p></Link>
             </div>
         </div>
     );

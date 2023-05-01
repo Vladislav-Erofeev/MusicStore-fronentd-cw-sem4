@@ -26,13 +26,13 @@
     margin-top: 30px;
 }
 
-@media screen and (min-width: 800px){
+@media screen and (min-width: 800px) {
     .main_block {
         width: 70%;
     }
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1000px) {
     .main_block {
         width: 50%;
     }
@@ -70,4 +70,8 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+.back {
+    min-height: 72vh;
 }

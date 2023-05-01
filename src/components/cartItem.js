@@ -6,8 +6,8 @@ import {ItemService} from "../services/ItemService";
 
 const CartItem = ({item, token, removeFromArray, index}) => {
     const remove = async (id) => {
-            await ItemService.removeItemFromCart(id, token)
-            removeFromArray(index)
+        await ItemService.removeItemFromCart(id, token)
+        removeFromArray(index)
     }
     return (
         <div className={styles.item}>
@@ -26,7 +26,9 @@ const CartItem = ({item, token, removeFromArray, index}) => {
                     }
                     <h1 className={styles.price}>{new Intl.NumberFormat('ru').format(item.price)} р.</h1>
                 </div>
-                <p className={styles.btn} onClick={() => {remove(item.id)}}>Убрать из корзины</p>
+                <p className={styles.btn} onClick={() => {
+                    remove(item.id)
+                }}>Убрать из корзины</p>
             </div>
         </div>
     );

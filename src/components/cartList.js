@@ -7,7 +7,7 @@ const CartList = ({items, token, remove}) => {
         <div className={styles.cart}>
             {items.map((item, index) =>
                 <CartItem item={item} token={token}
-                removeFromArray={remove} index={index} key={item.id} />
+                          removeFromArray={remove} index={index} key={item.id}/>
             )}
         </div>
     );

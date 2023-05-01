@@ -1,7 +1,7 @@
 .item {
     display: flex;
     border: none;
-    border-bottom: 2pt solid  #1D87DC;
+    border-bottom: 2pt solid #1D87DC;
     min-height: 200px;
     width: 90%;
     margin: auto;
