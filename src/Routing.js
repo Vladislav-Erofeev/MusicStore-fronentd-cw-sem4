@@ -10,6 +10,7 @@ import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import CartPage from "./pages/CartPage";
 import SearchResult from "./pages/searchResult";
+import OrderPage from "./pages/orderPage";
 
 const Routing = () => {
     const [auth, setAuth] = useState(false);
@@ -30,6 +31,7 @@ const Routing = () => {
                     <Route path={"/registration"} element={<RegistrationPage/>}/>
                     <Route path={"/cart"} element={<CartPage/>}/>
                     <Route path={"/search/:query"} element={<SearchResult/>}/>
+                    <Route path={"/order/:id"} element={<OrderPage/>}/>
                 </Routes>
             </BrowserRouter>
         </AuthContext.Provider>

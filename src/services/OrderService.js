@@ -21,4 +21,13 @@ export class OrderService {
 
         return res.data
     }
+
+    static async getOrder(id, token) {
+        let res = await axios.get(`${url}/order/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        return res.data
+    }
 }

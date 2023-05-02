@@ -1,0 +1,41 @@
+.main_block {
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    font-family: Roboto;
+    font-size: 14pt;
+}
+
+.main_block p {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 900px){
+    .main_block {
+        width: 100%;
+    }
+}
+
+.back {
+    min-height: 70vh;
+}
+
+.title {
+    text-align: center;
+    margin-top: 15px;
+    font-family: Roboto;
+    font-size: 25pt;
+}
+
+.main_block div {
+
+}
+
+.items {
+    text-align: center;
+    margin-top: 15px;
+    font-family: Roboto;
+    font-size: 20pt;
+    color: #1D87DC;
+}
