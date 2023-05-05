@@ -7,6 +7,7 @@ import styles from "../styles/items.module.css"
 import {useNavigate, useParams} from "react-router-dom";
 import {categories} from "../constants";
 import Cookies from "js-cookies/src/cookies";
+import Loader from "../components/UI/loader";
 
 const ItemListPage = () => {
     const {category} = useParams()
@@ -33,7 +34,7 @@ const ItemListPage = () => {
                 }
 
                 {isLoading
-                    ? <h1>Loading...</h1>
+                    ? <Loader />
                     : <ItemList items={items}/>
                 }
             </div>

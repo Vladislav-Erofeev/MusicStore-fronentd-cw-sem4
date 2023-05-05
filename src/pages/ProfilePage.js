@@ -8,23 +8,27 @@ import {nullUser, url} from "../constants";
 import styles from "../styles/profile.module.css"
 import {OrderService} from "../services/OrderService";
 import OrderList from "../components/orderList";
+import Loader from "../components/UI/loader";
 
 const ProfilePage = () => {
     const navigate = useNavigate()
     const [user, setUser] = useState(nullUser)
     const token = Cookies.getItem('token')
     const [orders, setOrders] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const logout = () => {
         Cookies.removeItem('token')
         navigate("/")
     }
 
     useEffect(() => {
+        setIsLoading(false)
         const fetch = async () => {
             let res = await ProfileService.getProfile(token)
             setUser(res)
             res = await OrderService.getOrders(token)
             setOrders(res)
+            setIsLoading(true)
         }
 
         fetch()
@@ -58,7 +62,9 @@ const ProfilePage = () => {
                 </div>
 
                 <h1 className={styles.orders}>Мои заказы</h1>
-                <OrderList orders={orders}/>
+                {isLoading
+                    ? <OrderList orders={orders}/>
+                    : <Loader/>}
             </div>
             <Footer/>
         </div>

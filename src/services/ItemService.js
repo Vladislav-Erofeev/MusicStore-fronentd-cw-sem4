@@ -18,15 +18,23 @@ export class ItemService {
         return res.data
     }
 
-    static async save(data) {
-        let res = await axios.post(`${url}/item/add`, data)
+    static async save(data, token) {
+        let res = await axios.post(`${url}/admin/add_item`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
         return res.data
     }
 
-    static async loadImage(id, file) {
+    static async loadImage(id, file, token) {
         const formData = new FormData()
         formData.append("file", file)
-        await axios.post(`${url}/item/load_image/${id}`, formData)
+        await axios.post(`${url}/admin/load_image/${id}`, formData, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
     }
 
     static async addItemToCart(itemId, token) {

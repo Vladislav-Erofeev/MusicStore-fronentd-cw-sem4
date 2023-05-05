@@ -11,6 +11,7 @@ import RegistrationPage from "./pages/RegistrationPage";
 import CartPage from "./pages/CartPage";
 import SearchResult from "./pages/searchResult";
 import OrderPage from "./pages/orderPage";
+import AdminItemsPage from "./pages/adminItemsPage";
 
 const Routing = () => {
     const [auth, setAuth] = useState(false);
@@ -25,6 +26,7 @@ const Routing = () => {
                     <Route path={"/items/:category"} element={<ItemListPage/>}/>
                     <Route path={"/items/all"} element={<ItemListPage/>}/>
                     <Route path={"/item/:id"} element={<ItemPage/>}/>
+                    <Route path={"/admin"} element={<AdminItemsPage />}/>
                     <Route path={"/admin/add"} element={<NewItemPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
                     <Route path={"/profile"} element={<ProfilePage/>}/>

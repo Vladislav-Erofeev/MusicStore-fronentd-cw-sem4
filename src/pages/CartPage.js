@@ -8,6 +8,7 @@ import styles from "../styles/cart.module.css"
 import CartList from "../components/cartList";
 import Input from "../components/UI/Input";
 import {OrderService} from "../services/OrderService";
+import Loader from "../components/UI/loader";
 
 const CartPage = () => {
     const navigation = useNavigate()
@@ -15,8 +16,10 @@ const CartPage = () => {
     const [cart, setCart] = useState([])
     const [sum, setSum] = useState(0)
     const [address, setAddress] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
+        setIsLoading(false)
         const fetch = async () => {
             try {
                 let cart = await ProfileService.getCart(token)
@@ -25,6 +28,7 @@ const CartPage = () => {
                 for (let i = 0; i < cart.length; i++)
                     sum += cart[i].price
                 setSum(sum)
+                setIsLoading(true)
             } catch (e) {
                 navigation("/login")
             }
@@ -58,7 +62,9 @@ const CartPage = () => {
                 {cart.length == 0
                     ? <h1 className={styles.empty}>У вас нет товаров в корзине</h1>
                     : <></>}
-                <CartList items={cart} token={token} remove={remove}/>
+                {isLoading
+                ?<CartList items={cart} token={token} remove={remove}/>
+                : <Loader />}
                 <div className={styles.order_info}>
                     <h1 className={styles.cart_title}>ВАШ ЗАКАЗ</h1>
                     <div className={styles.info}>
