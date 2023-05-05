@@ -9,6 +9,7 @@ import {ItemService} from "../services/ItemService";
 import Modal from "../components/UI/modal";
 import Button from "../components/UI/Button";
 import Cookies from "js-cookies/src/cookies";
+import AdminNavBar from "../components/UI/AdminNavBar";
 
 const NewItemPage = () => {
     const [item, setItem] = useState(nullItem)
@@ -40,7 +41,7 @@ const NewItemPage = () => {
                    text={text}
                    isOpened={isOpened}
                    setIsOpened={setIsOpened}/>
-            <NavBar/>
+            <AdminNavBar/>
             <h1 className={styles.title}>Добавить новый товар</h1>
             <div className={styles.form}>
                 <Input placeholder={"название"}

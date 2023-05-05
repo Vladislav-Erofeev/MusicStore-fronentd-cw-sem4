@@ -7,7 +7,8 @@ export class ItemService {
             category = ""
         let res = await axios.get(`${url}/item/all`, {
             params: {
-                category: category.toUpperCase()
+                category: category.toUpperCase(),
+                limit: 100
             }
         })
         return res.data;

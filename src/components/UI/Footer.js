@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "./styles/footer.module.css"
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -13,7 +14,7 @@ const Footer = () => {
                         <p>товары</p>
                         <p>профиль</p>
                         <p>корзина</p>
-                        <p>мои заказы</p>
+                        <Link to={"/admin"}><p>админ</p></Link>
                     </div>
                 </div>
                 <div className={styles.socials}>
