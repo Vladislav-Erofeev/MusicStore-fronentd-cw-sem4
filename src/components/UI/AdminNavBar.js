@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from "./styles/navbar.module.css";
 import {Link, useNavigate} from "react-router-dom";
 
-const NavBar = () => {
+const AdminNavBar = () => {
     const [isOpened, setIsOpened] = useState(false)
     const [linksStyle, setLinksStyle] = useState(styles.links_closed)
     const [searchStyle, setSearchStyle] = useState(styles.closed)
@@ -45,7 +45,7 @@ const NavBar = () => {
                     <Link to={"/"} style={{textDecoration: "none"}}><h1 className={styles.name}>GuitarStore</h1></Link>
                 </div>
 
-                <p>здесь найдётся всё</p>
+                <p>страница администрирования</p>
 
                 <div>
                     <img onClick={openSearchBar} src="/images/search.png" width={30} height={30}
@@ -57,9 +57,9 @@ const NavBar = () => {
 
             <div className={linksStyle}>
                 <Link to={"/"} className={styles.nav_links}><p>главная</p></Link>
-                <Link to={"/items/all"} className={styles.nav_links}><p>каталог</p></Link>
-                <Link to={"/cart"} className={styles.nav_links}><p>корзина</p></Link>
-                <Link to={"/login"} className={styles.nav_links}><p>профиль</p></Link>
+                <Link to={"/admin"} className={styles.nav_links}><p>каталог</p></Link>
+                <Link to={"/admin/orders"} className={styles.nav_links}><p>заказы</p></Link>
+                <Link to={"/admin/add"} className={styles.nav_links}><p>добавить</p></Link>
             </div>
 
             <div className={searchStyle} onClick={closeSearchBar}>
@@ -75,4 +75,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default AdminNavBar;

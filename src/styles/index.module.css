@@ -25,8 +25,6 @@
     font-weight: 400;
     margin-top: 15px;
     font-size: 25pt;
-
-
     color: #000000;
 }
 
@@ -124,6 +122,18 @@
 @media screen and (min-width: 900px) {
     .guitarists {
         width: 53%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .guitarists {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .guitarists div {
+        width: 55%;
     }
 }
 

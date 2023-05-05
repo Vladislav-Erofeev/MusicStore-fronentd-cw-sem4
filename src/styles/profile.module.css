@@ -80,3 +80,17 @@
     color: #09447a;
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px){
+    .profile_image {
+        width: 150px;
+    }
+
+    .username {
+        font-size: 20pt;
+    }
+
+    .user_info {
+        font-size: 11pt;
+    }
+}

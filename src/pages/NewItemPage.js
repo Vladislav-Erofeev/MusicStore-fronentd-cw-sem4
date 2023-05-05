@@ -8,19 +8,22 @@ import {nullItem} from "../constants";
 import {ItemService} from "../services/ItemService";
 import Modal from "../components/UI/modal";
 import Button from "../components/UI/Button";
+import Cookies from "js-cookies/src/cookies";
+import AdminNavBar from "../components/UI/AdminNavBar";
 
 const NewItemPage = () => {
     const [item, setItem] = useState(nullItem)
     const [file, setFile] = useState(null)
     const [isOpened, setIsOpened] = useState(false)
+    const token = Cookies.getItem('token')
     const [title, setTitle] = useState("Ошибка")
     const [text, setText] = useState("Упс! что-то пошло не так")
 
     const save = async () => {
         try {
-            let res = await ItemService.save(item)
+            let res = await ItemService.save(item, token)
             console.log(res)
-            res = await ItemService.loadImage(res, file)
+            res = await ItemService.loadImage(res, file, token)
             setItem(nullItem)
             setFile(null)
         } catch (e) {
@@ -38,7 +41,7 @@ const NewItemPage = () => {
                    text={text}
                    isOpened={isOpened}
                    setIsOpened={setIsOpened}/>
-            <NavBar/>
+            <AdminNavBar/>
             <h1 className={styles.title}>Добавить новый товар</h1>
             <div className={styles.form}>
                 <Input placeholder={"название"}
