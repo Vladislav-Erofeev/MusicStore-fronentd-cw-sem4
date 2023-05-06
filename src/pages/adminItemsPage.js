@@ -31,12 +31,13 @@ const AdminItemsPage = () => {
     return (
         <div>
             <AdminNavBar/>
-            {isLoading
-                ? <>
-                    <ItemList items={items}/>
-                </>
-                : <Loader/>}
-            <div style={{width: "100%"}}></div>
+            <div style={{minHeight: "76vh"}}>
+                {isLoading
+                    ? <>
+                        <ItemList items={items}/>
+                    </>
+                    : <Loader/>}
+            </div>
             <Footer/>
         </div>
     );
