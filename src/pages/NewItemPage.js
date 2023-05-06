@@ -10,6 +10,7 @@ import Modal from "../components/UI/modal";
 import Button from "../components/UI/Button";
 import Cookies from "js-cookies/src/cookies";
 import AdminNavBar from "../components/UI/AdminNavBar";
+import {useNavigate} from "react-router-dom";
 
 const NewItemPage = () => {
     const [item, setItem] = useState(nullItem)
@@ -18,6 +19,7 @@ const NewItemPage = () => {
     const token = Cookies.getItem('token')
     const [title, setTitle] = useState("Ошибка")
     const [text, setText] = useState("Упс! что-то пошло не так")
+    const navigation = useNavigate()
 
     const save = async () => {
         try {
@@ -26,6 +28,7 @@ const NewItemPage = () => {
             res = await ItemService.loadImage(res, file, token)
             setItem(nullItem)
             setFile(null)
+            navigation("/admin")
         } catch (e) {
             setIsOpened(true)
             return
@@ -59,8 +62,8 @@ const NewItemPage = () => {
                        type={"text"}
                        value={item.count}
                        onChange={e => (setItem({...item, count: e.target.value}))}/>
-                <Input placeholder={"стоимость"} t
-                       ype={"text"}
+                <Input placeholder={"стоимость"}
+                       type={"text"}
                        value={item.price}
                        onChange={e => (setItem({...item, price: e.target.value}))}/>
                 <select onChange={e => {

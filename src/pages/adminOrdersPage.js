@@ -26,7 +26,9 @@ const AdminOrdersPage = () => {
     return (
         <div>
             <AdminNavBar/>
-            <OrderList orders={orders} />
+            <div style={{minHeight: "76vh"}}>
+                <OrderList orders={orders} />
+            </div>
             <Footer/>
         </div>
     );

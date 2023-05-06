@@ -13,6 +13,7 @@ import SearchResult from "./pages/searchResult";
 import OrderPage from "./pages/orderPage";
 import AdminItemsPage from "./pages/adminItemsPage";
 import AdminOrdersPage from "./pages/adminOrdersPage";
+import ItemList from "./components/ItemList";
 
 const Routing = () => {
     const [auth, setAuth] = useState(false);
@@ -35,6 +36,7 @@ const Routing = () => {
                     <Route path={"/registration"} element={<RegistrationPage/>}/>
                     <Route path={"/cart"} element={<CartPage/>}/>
                     <Route path={"/search/:query"} element={<SearchResult/>}/>
+                    <Route path={"/search"} element={<ItemListPage />}/>
                     <Route path={"/order/:id"} element={<OrderPage/>}/>
                 </Routes>
             </BrowserRouter>

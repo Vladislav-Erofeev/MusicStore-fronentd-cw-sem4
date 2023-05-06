@@ -8,7 +8,7 @@ const Item = ({item}) => {
     return (
         <div className={styles.item}>
             <div className={styles.image}>
-                <img src={`${url}/image${item.images[0].url}`} width={"100%"}/>
+                <img src={`${url}/image${item.images[0].url}`} height={"100%"}/>
             </div>
             <div className={styles.text}>
                 <div>
