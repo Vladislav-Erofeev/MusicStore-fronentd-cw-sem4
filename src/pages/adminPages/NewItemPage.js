@@ -1,15 +1,15 @@
-import Input from "../components/UI/Input";
-import styles from "../styles/addNewItem.module.css"
-import TextArea from "../components/UI/TextArea";
-import NavBar from "../components/UI/NavBar";
-import Footer from "../components/UI/Footer";
+import Input from "../../components/UI/Input";
+import styles from "../../styles/addNewItem.module.css"
+import TextArea from "../../components/UI/TextArea";
+import NavBar from "../../components/UI/NavBar";
+import Footer from "../../components/UI/Footer";
 import {useEffect, useState} from "react";
-import {nullItem} from "../constants";
-import {ItemService} from "../services/ItemService";
-import Modal from "../components/UI/modal";
-import Button from "../components/UI/Button";
+import {nullItem} from "../../constants";
+import {ItemService} from "../../services/ItemService";
+import Modal from "../../components/UI/modal";
+import Button from "../../components/UI/Button";
 import Cookies from "js-cookies/src/cookies";
-import AdminNavBar from "../components/UI/AdminNavBar";
+import AdminNavBar from "../../components/UI/AdminNavBar";
 import {useNavigate} from "react-router-dom";
 
 const NewItemPage = () => {

@@ -55,7 +55,9 @@ const ItemPage = () => {
                 : <div className={styles.item}>
                     <h1 className={styles.title}>{item.title}</h1>
                     <div className={styles.item_container}>
-                        <img className={styles.image} src={`${url}/image${item.images[0].url}`} width="250px"/>
+                        <div className={styles.image}>
+                            <img  src={`${url}/image${item.images[0].url}`} height="100%"/>
+                        </div>
                         <div>
                             <div className={styles.block1}>
                                 <p>{categories[item.category]}</p>

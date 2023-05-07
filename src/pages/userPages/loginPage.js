@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import NavBar from "../components/UI/NavBar";
-import Footer from "../components/UI/Footer";
-import Input from "../components/UI/Input";
-import styles from "../styles/loginPage.module.css"
+import NavBar from "../../components/UI/NavBar";
+import Footer from "../../components/UI/Footer";
+import Input from "../../components/UI/Input";
+import styles from "../../styles/loginPage.module.css"
 import {Link, useNavigate} from "react-router-dom";
 import Cookies from "js-cookies/src/cookies";
 import axios from "axios";
-import {ProfileService} from "../services/ProfileService";
-import Button from "../components/UI/Button";
+import {ProfileService} from "../../services/ProfileService";
+import Button from "../../components/UI/Button";
 
 const LoginPage = () => {
     const navigate = useNavigate();

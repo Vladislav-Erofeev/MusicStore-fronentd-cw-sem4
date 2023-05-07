@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import NavBar from "../components/UI/NavBar";
-import Footer from "../components/UI/Footer";
+import NavBar from "../../components/UI/NavBar";
+import Footer from "../../components/UI/Footer";
 import Cookies from "js-cookies/src/cookies";
 import {useNavigate} from "react-router-dom";
-import {ProfileService} from "../services/ProfileService";
-import styles from "../styles/cart.module.css"
-import CartList from "../components/cartList";
-import Input from "../components/UI/Input";
-import {OrderService} from "../services/OrderService";
-import Loader from "../components/UI/loader";
+import {ProfileService} from "../../services/ProfileService";
+import styles from "../../styles/cart.module.css"
+import CartList from "../../components/cartList";
+import Input from "../../components/UI/Input";
+import {OrderService} from "../../services/OrderService";
+import Loader from "../../components/UI/loader";
 
 const CartPage = () => {
     const navigation = useNavigate()

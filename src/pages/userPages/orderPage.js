@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import NavBar from "../components/UI/NavBar";
-import Footer from "../components/UI/Footer";
+import NavBar from "../../components/UI/NavBar";
+import Footer from "../../components/UI/Footer";
 import {useParams} from "react-router-dom";
-import {OrderService} from "../services/OrderService";
+import {OrderService} from "../../services/OrderService";
 import Cookies from "js-cookies/src/cookies";
-import ItemList from "../components/ItemList";
-import styles from "../styles/order.module.css"
-import Loader from "../components/UI/loader";
+import ItemList from "../../components/ItemList";
+import styles from "../../styles/order.module.css"
+import Loader from "../../components/UI/loader";
 
 const OrderPage = () => {
     const {id} = useParams()

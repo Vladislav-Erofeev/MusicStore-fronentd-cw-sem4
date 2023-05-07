@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import NavBar from "../components/UI/NavBar";
-import Footer from "../components/UI/Footer";
+import NavBar from "../../components/UI/NavBar";
+import Footer from "../../components/UI/Footer";
 import {useNavigate} from "react-router-dom";
 import Cookies from "js-cookies/src/cookies";
-import {ProfileService} from "../services/ProfileService";
-import {nullUser, url} from "../constants";
-import styles from "../styles/profile.module.css"
-import {OrderService} from "../services/OrderService";
-import OrderList from "../components/orderList";
-import Loader from "../components/UI/loader";
+import {ProfileService} from "../../services/ProfileService";
+import {nullUser, url} from "../../constants";
+import styles from "../../styles/profile.module.css"
+import {OrderService} from "../../services/OrderService";
+import OrderList from "../../components/orderList";
+import Loader from "../../components/UI/loader";
 
 const ProfilePage = () => {
     const navigate = useNavigate()

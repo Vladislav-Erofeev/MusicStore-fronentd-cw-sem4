@@ -1,12 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
-import NavBar from "../components/UI/NavBar";
-import Footer from "../components/UI/Footer";
+import NavBar from "../../components/UI/NavBar";
+import Footer from "../../components/UI/Footer";
 import cookies from "js-cookies/src/cookies";
 import {useNavigate} from "react-router-dom";
-import {AdminService} from "../services/adminService";
-import ItemList from "../components/ItemList";
-import Loader from "../components/UI/loader";
-import AdminNavBar from "../components/UI/AdminNavBar";
+import {AdminService} from "../../services/adminService";
+import ItemList from "../../components/ItemList";
+import Loader from "../../components/UI/loader";
+import AdminNavBar from "../../components/UI/AdminNavBar";
 
 const AdminItemsPage = () => {
     const token = cookies.getItem('token')

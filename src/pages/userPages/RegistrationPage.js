@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import NavBar from "../components/UI/NavBar";
-import Footer from "../components/UI/Footer";
-import Input from "../components/UI/Input";
-import Button from "../components/UI/Button";
-import styles from "../styles/registration.module.css"
-import {nullUser, registerUser} from "../constants";
-import {ProfileService} from "../services/ProfileService";
+import NavBar from "../../components/UI/NavBar";
+import Footer from "../../components/UI/Footer";
+import Input from "../../components/UI/Input";
+import Button from "../../components/UI/Button";
+import styles from "../../styles/registration.module.css"
+import {nullUser, registerUser} from "../../constants";
+import {ProfileService} from "../../services/ProfileService";
 import Cookies from "js-cookies/src/cookies";
 import {useNavigate} from "react-router-dom";
 

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import AdminNavBar from "../components/UI/AdminNavBar";
-import Footer from "../components/UI/Footer";
-import {AdminService} from "../services/adminService";
-import OrderList from "../components/orderList";
+import AdminNavBar from "../../components/UI/AdminNavBar";
+import Footer from "../../components/UI/Footer";
+import {AdminService} from "../../services/adminService";
+import OrderList from "../../components/orderList";
 import Cookies from "js-cookies/src/cookies";
 import {useNavigate} from "react-router-dom";
 
