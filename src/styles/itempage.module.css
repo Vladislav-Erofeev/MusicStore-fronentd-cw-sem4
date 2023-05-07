@@ -7,9 +7,14 @@
 }
 
 .image {
-    display: block;
+    display: flex;
     margin: auto;
     margin-top: 15px;
+    height: 500px;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .item {

@@ -3,16 +3,16 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
 import ItemListPage from "./pages/ItemListPage";
 import ItemPage from "./pages/ItemPage";
-import NewItemPage from "./pages/NewItemPage";
+import NewItemPage from "./pages/adminPages/NewItemPage";
 import {AuthContext} from "./services/contextHolder";
-import LoginPage from "./pages/loginPage";
-import ProfilePage from "./pages/ProfilePage";
-import RegistrationPage from "./pages/RegistrationPage";
-import CartPage from "./pages/CartPage";
+import LoginPage from "./pages/userPages/loginPage";
+import ProfilePage from "./pages/userPages/ProfilePage";
+import RegistrationPage from "./pages/userPages/RegistrationPage";
+import CartPage from "./pages/userPages/CartPage";
 import SearchResult from "./pages/searchResult";
-import OrderPage from "./pages/orderPage";
-import AdminItemsPage from "./pages/adminItemsPage";
-import AdminOrdersPage from "./pages/adminOrdersPage";
+import OrderPage from "./pages/userPages/orderPage";
+import AdminItemsPage from "./pages/adminPages/adminItemsPage";
+import AdminOrdersPage from "./pages/adminPages/adminOrdersPage";
 import ItemList from "./components/ItemList";
 
 const Routing = () => {
