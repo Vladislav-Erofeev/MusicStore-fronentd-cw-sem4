@@ -56,7 +56,7 @@ const ItemPage = () => {
                     <h1 className={styles.title}>{item.title}</h1>
                     <div className={styles.item_container}>
                         <div className={styles.image}>
-                            <img  src={`${url}/image${item.images[0].url}`} height="100%"/>
+                            <img  src={`${url}/image${item.images[0].url}`} height="80%"/>
                         </div>
                         <div>
                             <div className={styles.block1}>

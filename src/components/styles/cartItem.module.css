@@ -1,6 +1,5 @@
 .item {
     display: flex;
-    border: none;
     border-bottom: 2pt solid #1D87DC;
     min-height: 200px;
     width: 90%;
@@ -10,21 +9,32 @@
     padding: 15px;
 }
 
+@media screen and (min-width: 1100px) {
+    .item {
+        width: 100%;
+    }
+}
+
 .item .category {
     font-family: 'Roboto';
-    font-size: 16pt;
+    font-size: 14pt;
     color: #4F4F4F;
 }
 
 .item .image {
-    width: 100px;
     height: 200px;
+    width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
+@media screen and (max-width: 1100px){
+    .item .image {
+        width: 150px;
+    }
+}
 
 .item .text {
     height: 200px;
@@ -33,11 +43,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     flex-grow: 0.5;
+    width: 500px;
 }
 
 .item .title {
     font-family: 'Roboto';
-    font-size: 23pt;
+    font-size: 17pt;
 }
 
 .item .mini_text {
@@ -48,7 +59,7 @@
 
 .item .price {
     font-family: 'Roboto';
-    font-size: 20pt;
+    font-size: 17pt;
 }
 
 .item .btn {
@@ -60,7 +71,6 @@
     text-decoration: none;
     font-family: 'Roboto';
     font-size: 14pt;
-    cursor: pointer;
 }
 
 .item .btn:hover {
